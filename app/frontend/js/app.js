@@ -41,6 +41,10 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider',
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })
+    .when('/random', {
+      templateUrl: 'views/random.html',
+      controller: 'RandomCtrl'
+    })
     .when('/404', {
       templateUrl: 'views/404.html',
       controller: '404Ctrl'
