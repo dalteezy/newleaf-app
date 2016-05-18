@@ -337,3 +337,28 @@ pre code {
   -moz-opacity: 0.8;
   opacity: 0.8;
 }
+
+/* ======= Custom Includes ======= */
+header#header .container .inner-container .logo {
+  padding: 0;
+  display: table;
+}
+
+header#header .container .inner-container .logo a {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+header#header .container .inner-container nav#main-nav ul.nav {
+  margin: 0;
+}
+
+header#header .container .inner-container nav#main-nav ul.nav > li {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+}
+
+header#header .container .inner-container nav#main-nav ul.nav > li button {
+  margin: 0;
+}

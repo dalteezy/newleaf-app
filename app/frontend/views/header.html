@@ -2,36 +2,38 @@
 <!-- ******HEADER****** --> 
 <div ng-controller="HeaderCtrl">
     <header id="header" class="header">  
-        <div class="container">            
-            <h1 class="logo columns four">
-                <a class="scrollto" href="/">
-                    <img src="../img/logo.png" width="210" height="" alt="New Leaf Logo" />
-                </a>
-            </h1><!--//logo-->              
-            <nav id="main-nav" class="main-nav navbar-right columns eight" role="navigation">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button><!--//nav-toggle-->
-                </div><!--//navbar-header-->            
-                <div class="navbar-collapse collapse" id="navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li ng-show="isSignedIn" class="nav-item"><a class="scrollto" href="/admin">Admin</a></li>
-                        <li ng-show="isSignedIn" class="nav-item"><a class="scrollto" href="#" ng-click="signout()" >Signout</a></li>
-                        <li ng-hide="isSignedIn" class="nav-item"><a class="scrollto" href="#" ng-click="signinModal()" >Sign In</a></li>
-                        <li ng-hide="isSignedIn" class="nav-item"><a class="scrollto" href="#" ng-click="signupModal()" >Sign Up</a></li>
-                        <li class="nav-item">
-                            <a class="scrollto" href="https://github.com/jbltx/generator-mean-stack" target="_blank">Docs</a>
-                        </li>
-                        <li class="nav-item last">
-                            <a class="nav-item last" href="/random">Random</a>
-                        </li>
-                    </ul><!--//nav-->
-                </div><!--//navabr-collapse-->
-            </nav><!--//main-nav-->
+        <div class="container">      
+            <div class="inner-container row">      
+                <strong class="logo columns four">
+                    <a class="scrollto" href="/">
+                        <img src="../img/logo.png" width="210" height="" alt="New Leaf Logo" />
+                    </a>
+                </strong><!--//logo-->              
+                <nav id="main-nav" class="main-nav navbar-right columns eight" role="navigation">
+                    <div class="navbar-collapse collapse" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button><!--//nav-toggle-->
+                            </li>
+                            <li ng-show="isSignedIn" class="nav-item"><a class="scrollto" href="/admin">Admin</a></li>
+                            <li ng-show="isSignedIn" class="nav-item"><a class="scrollto" href="#" ng-click="signout()" >Signout</a></li>
+                            <li ng-hide="isSignedIn" class="nav-item"><a class="scrollto" href="#" ng-click="signinModal()" >Sign In</a></li>
+                            <li ng-hide="isSignedIn" class="nav-item"><a class="scrollto" href="#" ng-click="signupModal()" >Sign Up</a></li>
+                            <li class="nav-item">
+                                <a class="scrollto" href="https://github.com/jbltx/generator-mean-stack" target="_blank">Docs</a>
+                            </li>
+                            <li class="nav-item last">
+                                <a class="nav-item last" href="/random">Random</a>
+                            </li>
+                        </ul><!--//nav-->
+                    </div><!--//navabr-collapse-->
+                </nav><!--//main-nav-->
+            </div>
         </div>
     </header><!--//header-->
 
