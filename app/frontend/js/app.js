@@ -9,7 +9,6 @@ var app = angular.module('newLeafEfficiency', [
   'ui.bootstrap'
 ]);
 
-
 app.config(['$routeProvider', '$locationProvider', '$httpProvider',
   
   function ($routeProvider, $locationProvider, $httpProvider) {

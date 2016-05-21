@@ -16,6 +16,8 @@ var path 		  = require('path');
 var logger 		= require('morgan');
 var config		= JSON.parse(fs.readFileSync(path.join(__dirname, './config.json'), 'utf8'));
 
+
+
 /**
  * Server configuration in development environment.
  *
@@ -69,3 +71,46 @@ else {
 app.listen(app.get('port'), app.get('host'), function (){
 	console.log('Server in '+app.get('env')+' environment running at '+app.get('host')+':'+app.get('port'));
 });
+
+// var xmlhttp = new XMLHttpRequest();
+// var url = "http://ipinfo.io/json";
+// xmlhttp.open('get', url, true);
+// xmlhttp.send();
+// xmlhttp.onreadystatechange = processRequest;
+
+// function processRequest(e) {
+//   if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+//     var response = JSON.parse(xmlhttp.responseText);
+//     alert(response.city);
+//   }
+// }
+
+// var http = require('request');
+// var company = "projects.newleaf.team";
+// var key = "mouth726brown";
+
+// var base64 = new Buffer(key + ":xxx").toString("base64");
+
+// var options = {
+//     hostname: company,
+//     path: "/projects.json",
+//     method: "GET",
+//     headers: {
+//         "Authorization": "BASIC " + base64,
+//         "Content-Type": "application/json"
+//     }
+// };
+// var req = request(options, function(res) {
+//     console.log("STATUS: " + res.statusCode);
+//     console.log("HEADERS: " + JSON.stringify(res.headers));
+//     res.setEncoding("utf8");
+//     res.on("data", function (chunk) {
+//         console.log("BODY: " + chunk);
+//     });
+// });
+
+// req.on("error", function(e) {
+//     console.log("ERROR: " + e.message);
+// });
+
+// req.end();
