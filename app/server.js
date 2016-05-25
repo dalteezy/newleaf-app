@@ -72,45 +72,39 @@ app.listen(app.get('port'), app.get('host'), function (){
 	console.log('Server in '+app.get('env')+' environment running at '+app.get('host')+':'+app.get('port'));
 });
 
-// var xmlhttp = new XMLHttpRequest();
-// var url = "http://ipinfo.io/json";
-// xmlhttp.open('get', url, true);
-// xmlhttp.send();
-// xmlhttp.onreadystatechange = processRequest;
-
-// function processRequest(e) {
-//   if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-//     var response = JSON.parse(xmlhttp.responseText);
-//     alert(response.city);
-//   }
-// }
-
-// var http = require('request');
-// var company = "projects.newleaf.team";
-// var key = "mouth726brown";
-
-// var base64 = new Buffer(key + ":xxx").toString("base64");
-
-// var options = {
-//     hostname: company,
-//     path: "/projects.json",
-//     method: "GET",
-//     headers: {
-//         "Authorization": "BASIC " + base64,
-//         "Content-Type": "application/json"
+// var request = require('request');
+// request('http://ipinfo.io/json', function (error, response, body) {
+//     //Check for error
+//     if(error){
+//         return console.log('Error:', error);
 //     }
-// };
-// var req = request(options, function(res) {
-//     console.log("STATUS: " + res.statusCode);
-//     console.log("HEADERS: " + JSON.stringify(res.headers));
-//     res.setEncoding("utf8");
-//     res.on("data", function (chunk) {
-//         console.log("BODY: " + chunk);
-//     });
+
+//     //Check for right status code
+//     if(response.statusCode !== 200){
+//         return console.log('Invalid Status Code Returned:', response.statusCode);
+//     }
+
+//     //All is good. Print the body
+//     console.log(body); // Show the HTML for the Modulus homepage.
 // });
 
-// req.on("error", function(e) {
-//     console.log("ERROR: " + e.message);
-// });
+//Load the request module
+var request = require('request');
 
-// req.end();
+//Lets configure and request
+request({
+    url: 'http://modulus.io', //URL to hit
+    qs: {from: 'blog example', time: +new Date()}, //Query string data
+    method: 'GET', //Specify the method
+    headers: { //We can define headers too
+        'Content-Type': 'MyContentType',
+        'Custom-Header': 'Custom Value'
+    }
+}, function(error, response, body){
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(response.statusCode, body);
+    }
+});
+
