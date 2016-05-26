@@ -1,67 +1,94 @@
 <!-- ******PROMO****** -->
-    
-    <!-- ******ABOUT****** --> 
-    <div id="homePage" ng-controller="calculator">
-    <section id="about" class="about section">
-        <div class="container">
-            <div class="row">
-                <div class="columns three center">
-                    <div class="image-wrap">
-                        <img src="../img/emp-placeholder.jpg" alt="First Employee" />
-                    </div>
-                    <div class="employee-info">
-                        <div class="emp-name">John Dopamine</div>
-                        <div class="emp-job-title">Dope Distributor</div>
-                    </div>
-                </div>
-                <div class="columns three center">
-                    <div class="image-wrap" ng-click="calc()">
-                        <img src="../img/emp-placeholder.jpg" alt="Second Employee" />
-                    </div>
-                    <div class="employee-info">
-                        <div class="emp-name">Jake Dopamine</div>
-                        <div class="emp-job-title">Dope Distributor</div>
-                    </div>
-                </div>
-                <div class="columns three center">
-                    <div class="image-wrap">
-                        <img src="../img/emp-placeholder.jpg" alt="Third Employee" />
-                    </div>
-                    <div class="employee-info">
-                        <div class="emp-name">Dalton Dopamine</div>
-                        <div class="emp-job-title">Dope Distributor</div>
-                    </div>
-                </div>
-                <div class="columns three center">
-                    <div class="image-wrap">
-                        <img src="../img/emp-placeholder.jpg" alt="Fourth Employee" />
-                    </div>
-                    <div class="employee-info">
-                        <div class="emp-name">Sarah Tonin</div>
-                        <div class="emp-job-title">Tonin Distributor</div>
-                    </div>
-                </div>
-            </div>
-        </div><!--//container-->
-    </section><!--//about-->
-    
-    
-    <!-- ******CONTACT****** --> 
-    <section id="contact" class="contact section has-pattern">
-        <div class="container">
-            <div class="contact-inner center">
-                <h2 class="title">Efficiency Calculator</h2>
-                <p class="intro">Calculate your efficiency for the week.</p>
-                <form class="calculator-form" ng-submit="submit()">
-                    <label>Deputy Clocked Hours</label>
-                    <input class="teamwork-hours input" ng-model="number2" type="text" />
-                    <div>+</div>
-                    <label>Teamwork Logged Time</label>
-                    <input class="deputy-hours input" ng-model="number1" type="text" />
-                    <input type="submit" placeholder="Submit" />
-                </form>
-                <div class="efficiency">Efficiency = {{calculation*100}} %</div>
-            </div><!--//contact-inner-->
-        </div><!--//container-->
-    </section><!--//contact-->  
+
+<!-- ******ABOUT****** --> 
+<div id="homePage" ng-controller="calculator">
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="row">
+        <div class="columns three center">
+          <div class="image-wrap">
+            <img src="../img/emp-placeholder.jpg" alt="First Employee" />
+          </div>
+          <div class="employee-info">
+            <div class="emp-name">John Dopamine</div>
+            <div class="emp-job-title">Dope Distributor</div>
+          </div>
+        </div>
+        <div class="columns three center">
+          <div class="image-wrap" ng-click="calc()">
+            <img src="../img/emp-placeholder.jpg" alt="Second Employee" />
+          </div>
+          <div class="employee-info">
+            <div class="emp-name">Jake Dopamine</div>
+            <div class="emp-job-title">Dope Distributor</div>
+          </div>
+        </div>
+        <div class="columns three center">
+          <div class="image-wrap">
+            <img src="../img/emp-placeholder.jpg" alt="Third Employee" />
+          </div>
+          <div class="employee-info">
+            <div class="emp-name">Dalton Dopamine</div>
+            <div class="emp-job-title">Dope Distributor</div>
+          </div>
+        </div>
+        <div class="columns three center">
+          <div class="image-wrap">
+            <img src="../img/emp-placeholder.jpg" alt="Fourth Employee" />
+          </div>
+          <div class="employee-info">
+            <div class="emp-name">Sarah Tonin</div>
+            <div class="emp-job-title">Tonin Distributor</div>
+          </div>
+        </div>
+      </div>
+    </div><!--//container-->
+  </section><!--//about-->
+
+
+  <!-- ******CONTACT****** --> 
+  <section id="contact" class="contact section has-pattern">
+    <div class="container">
+      <div class="contact-inner center">
+        <h2 class="title">Efficiency Calculator</h2>
+        <p class="intro">Calculate your efficiency for the week.</p>
+        <form class="calculator-form" ng-submit="submit()">
+          <label>Deputy Clocked Hours</label>
+          <input class="teamwork-hours input" ng-model="number2" type="text" />
+          <div>+</div>
+          <label>Teamwork Logged Time</label>
+          <input class="deputy-hours input" ng-model="number1" type="text" />
+          <input type="submit" placeholder="Submit" />
+        </form>
+        <div class="efficiency">Efficiency = {{calculation*100}} %</div>
+      </div><!--//contact-inner-->
+    </div><!--//container-->
+  </section><!--//contact-->  
+
+  <section id="practiceGet" class="section" ng-controller="practiceGet">
+    <div class="container">
+      <div class="request-inner">
+        <div class="title-section center">
+          <h2>Practice API Call</h2>
+          <p>Pulling test data from test API</p>
+        </div>
+        <div class="content-section">
+          <ul>
+            <li>$http status code: {{status}}</li>
+            <li>IP: {{data.ip}}</li>
+            <li>Hostname: {{data.hostname}}</li>
+            <li>City: {{data.city}}</li>
+            <li>Region: {{data.region}}</li>
+            <li>Country: {{data.country}}</li>
+            <li>Location: {{data.loc}}</li>
+            <li>Organization: {{data.org}}</li>
+            <li>Zip Code: {{data.postal}}</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </section>
+</div>
+
+
+

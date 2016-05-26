@@ -20,6 +20,23 @@ angular.module('newLeafEfficiency')
   	var random = parseInt($scope.number1) / parseInt($scope.number2);
   	$scope.calculation = random.toPrecision(4);
   };
-}]);
+}])
+.controller('practiceGet', ['$scope', '$http', '$templateCache',
+  function($scope, $http, $templateCache) {
+    $scope.method = 'GET';
+    $scope.url = 'http://ipinfo.io/json';
+
+      $scope.code = null;
+      $scope.response = null;
+
+      $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
+        then(function(response) {
+          $scope.status = response.status;
+          $scope.data = response.data;
+        }, function(response) {
+          $scope.data = response.data || "Request failed";
+          $scope.status = response.status;
+      });
+  }]);
 
 

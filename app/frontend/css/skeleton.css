@@ -772,3 +772,7 @@ form {
 .center {
   text-align: center;
 }
+
+section {
+  padding: 50px 0;
+}
