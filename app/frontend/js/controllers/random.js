@@ -45,7 +45,7 @@ angular.module('newLeafEfficiency')
 
       $scope.response = null;
 
-      $http({method: $scope.method, url: $scope.url, cache: $templateCache,  headers: {'Content-Type': 'application/json; text/javascript; */*', 'Authorization': 'Basic ' + $scope.token}}) // $http has many more options for parameters.
+      $http({method: $scope.method, url: $scope.url, cache: $templateCache,  headers: {'Content-Type': 'application/json; text/javascript; */*', 'Authorization': 'BASIC ' + window.btoa($scope.token + ":xxx")}}) // $http has many more options for parameters.
         .then(function(response) {   // "then" basically means that the connection was successful, so move on.
           $scope.status = response.status;
           $scope.data = response.data;
