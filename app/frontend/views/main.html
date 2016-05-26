@@ -65,7 +65,7 @@
     </div><!--//container-->
   </section><!--//contact-->  
 
-  <section id="practiceGet" class="section" ng-controller="practiceGet">
+  <section id="practiceGet" class="section">
     <div class="container">
       <div class="request-inner">
         <div class="title-section center">
@@ -73,17 +73,29 @@
           <p>Pulling test data from test API</p>
         </div>
         <div class="content-section">
-          <ul>
-            <li>$http status code: {{status}}</li>
-            <li>IP: {{data.ip}}</li>
-            <li>Hostname: {{data.hostname}}</li>
-            <li>City: {{data.city}}</li>
-            <li>Region: {{data.region}}</li>
-            <li>Country: {{data.country}}</li>
-            <li>Location: {{data.loc}}</li>
-            <li>Organization: {{data.org}}</li>
-            <li>Zip Code: {{data.postal}}</li>
-          </ul>
+          <div class="row">
+            <div class="column one-half" ng-controller="practiceGet">
+              <h3>Info From Practice API</h3>
+              <ul>
+                <li>$http status code: {{status}}</li>
+                <li>IP: {{data.ip}}</li>
+                <li>Hostname: {{data.hostname}}</li>
+                <li>City: {{data.city}}</li>
+                <li>Region: {{data.region}}</li>
+                <li>Country: {{data.country}}</li>
+                <li>Location: {{data.loc}}</li>
+                <li>Organization: {{data.org}}</li>
+                <li>Zip Code: {{data.postal}}</li>
+              </ul>
+            </div>
+            <div class="column one-half" ng-controller="teamworkGet">
+              <h3>Info From Teamwork API</h3>
+              <ul>
+                <li>$http status code: {{status}}</li>
+                <li>$http data: {{data}}</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

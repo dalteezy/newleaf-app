@@ -27,9 +27,6 @@ if (app.get('env') === 'development') {
 	// Use morgan middleware as logger
 	app.use(logger('dev'));
 
-	// Set hostname from config file
-	app.set('host', config.development.host);
-
 	// Set port from config file
 	app.set('port', config.development.port);
 
@@ -50,11 +47,14 @@ if (app.get('env') === 'development') {
 } 
 else {
 
-	// Set hostname from config file
-	app.set('host', config.production.host);
+	// // Set hostname from config file
+	// app.set('host', config.production.host);
 
 	// Set port from config file 
 	app.set('port', config.production.port);
+
+	// 	// Set hostname from config file
+	// app.set('host', config.development.host);
 
 	// Express will use /frontend dir to access to index.html and other files required by AngularJS
 	app.use(express.static(path.join(__dirname, './frontend')));

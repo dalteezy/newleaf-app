@@ -26,17 +26,33 @@ angular.module('newLeafEfficiency')
     $scope.method = 'GET';
     $scope.url = 'http://ipinfo.io/json';
 
-      $scope.code = null;
       $scope.response = null;
 
-      $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
-        then(function(response) {
+      $http({method: $scope.method, url: $scope.url, cache: $templateCache}). // $http has many more options for parameters.
+        then(function(response) {   // "then" basically means that the connection was successful, so move on.
           $scope.status = response.status;
           $scope.data = response.data;
         }, function(response) {
           $scope.data = response.data || "Request failed";
           $scope.status = response.status;
       });
-  }]);
+}])
+.controller('teamworkGet', ['$scope', '$http', '$templateCache',
+  function($scope, $http, $templateCache) {
+    $scope.method = 'GET';
+    $scope.token = 'mouth726brown';
+    $scope.url = 'https://projects.newleaf.team/people.json/';
+
+      $scope.response = null;
+
+      $http({method: $scope.method, url: $scope.url, cache: $templateCache,  headers: {'Content-Type': 'application/json', 'Authorization': 'Basic ' + $scope.token}}). // $http has many more options for parameters.
+        then(function(response) {   // "then" basically means that the connection was successful, so move on.
+          $scope.status = response.status;
+          $scope.data = response.data;
+        }, function(response) {
+          $scope.data = response.data || "Request failed";
+          $scope.status = response.status;
+      });
+}])
 
 
