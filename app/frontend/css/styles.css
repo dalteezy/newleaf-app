@@ -323,7 +323,7 @@ pre code {
 
 /* ======= Footer ======= */
 .footer {
-  position: fixed;
+  position: static;
   bottom: 0;
   margin: 0;
   width: 100%;

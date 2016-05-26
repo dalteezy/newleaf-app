@@ -68,8 +68,8 @@ else {
 
 
 // All configuration is done, gonna listen to hostname:port...
-app.listen(app.get('port'), app.get('host'), function (){
-	console.log('Server in '+app.get('env')+' environment running at '+app.get('host')+':'+app.get('port'));
+app.listen(app.get('port'), function (){
+	console.log('Server in '+app.get('env')+' environment running at port:'+app.get('port'));
 });
 
 // var request = require('request');
@@ -88,23 +88,23 @@ app.listen(app.get('port'), app.get('host'), function (){
 //     console.log(body); // Show the HTML for the Modulus homepage.
 // });
 
-//Load the request module
-var request = require('request');
+// //Load the request module
+// var request = require('request');
 
-//Lets configure and request
-request({
-    url: 'http://modulus.io', //URL to hit
-    qs: {from: 'blog example', time: +new Date()}, //Query string data
-    method: 'GET', //Specify the method
-    headers: { //We can define headers too
-        'Content-Type': 'MyContentType',
-        'Custom-Header': 'Custom Value'
-    }
-}, function(error, response, body){
-    if(error) {
-        console.log(error);
-    } else {
-        console.log(response.statusCode, body);
-    }
-});
+// //Lets configure and request
+// request({
+//     url: 'http://modulus.io', //URL to hit
+//     qs: {from: 'blog example', time: +new Date()}, //Query string data
+//     method: 'GET', //Specify the method
+//     headers: { //We can define headers too
+//         'Content-Type': 'MyContentType',
+//         'Custom-Header': 'Custom Value'
+//     }
+// }, function(error, response, body){
+//     if(error) {
+//         console.log(error);
+//     } else {
+//         console.log(response.statusCode, body);
+//     }
+// });
 
