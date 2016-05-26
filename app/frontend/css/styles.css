@@ -339,6 +339,10 @@ pre code {
 }
 
 /* ======= Custom Includes ======= */
+header#header {
+  position: static;
+}
+
 header#header .container .inner-container .logo {
   padding: 0;
   display: table;
@@ -361,4 +365,13 @@ header#header .container .inner-container nav#main-nav ul.nav > li {
 
 header#header .container .inner-container nav#main-nav ul.nav > li button {
   margin: 0;
+}
+
+.calculator-form input {
+  color: #000;
+}
+
+.calculator-form input[type="submit"] {
+  display: block;
+  margin: 0 auto;
 }

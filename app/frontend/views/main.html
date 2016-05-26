@@ -1,15 +1,47 @@
 <!-- ******PROMO****** -->
-    <section id="promo" class="promo section">
-        <div class="container text-center">
-            <p class="intro">Dude, your MEAN app is ready !</p>
-        </div><!--//container-->
-    </section><!--//promo-->
     
     <!-- ******ABOUT****** --> 
+    <div id="homePage" ng-controller="calculator">
     <section id="about" class="about section">
         <div class="container">
-            <h2 class="title text-center">So, what next ?</h2>
-            <p class="intro text-center">Welcome to your mean-stack application. Are you a Javascript lover ? So you are at the right place. MEAN is for MongoDB, ExpressJS, AngularJS, and NodeJS, which means you can write Javascript code on each side of the project (backend - frontend).</p>
+            <div class="row">
+                <div class="columns three center">
+                    <div class="image-wrap">
+                        <img src="../img/emp-placeholder.jpg" alt="First Employee" />
+                    </div>
+                    <div class="employee-info">
+                        <div class="emp-name">John Dopamine</div>
+                        <div class="emp-job-title">Dope Distributor</div>
+                    </div>
+                </div>
+                <div class="columns three center">
+                    <div class="image-wrap" ng-click="calc()">
+                        <img src="../img/emp-placeholder.jpg" alt="Second Employee" />
+                    </div>
+                    <div class="employee-info">
+                        <div class="emp-name">Jake Dopamine</div>
+                        <div class="emp-job-title">Dope Distributor</div>
+                    </div>
+                </div>
+                <div class="columns three center">
+                    <div class="image-wrap">
+                        <img src="../img/emp-placeholder.jpg" alt="Third Employee" />
+                    </div>
+                    <div class="employee-info">
+                        <div class="emp-name">Dalton Dopamine</div>
+                        <div class="emp-job-title">Dope Distributor</div>
+                    </div>
+                </div>
+                <div class="columns three center">
+                    <div class="image-wrap">
+                        <img src="../img/emp-placeholder.jpg" alt="Fourth Employee" />
+                    </div>
+                    <div class="employee-info">
+                        <div class="emp-name">Sarah Tonin</div>
+                        <div class="emp-job-title">Tonin Distributor</div>
+                    </div>
+                </div>
+            </div>
         </div><!--//container-->
     </section><!--//about-->
     
@@ -17,10 +49,19 @@
     <!-- ******CONTACT****** --> 
     <section id="contact" class="contact section has-pattern">
         <div class="container">
-            <div class="contact-inner">
-                <h2 class="title  text-center">Stay tuned</h2>
-                <p class="intro  text-center">I hope this generator will help you in your work. <br />Feel free to get in touch if you have any questions or suggestions.</p>
-                
+            <div class="contact-inner center">
+                <h2 class="title">Efficiency Calculator</h2>
+                <p class="intro">Calculate your efficiency for the week.</p>
+                <form class="calculator-form" ng-submit="submit()">
+                    <label>Deputy Clock Hours</label>
+                    <input class="teamwork-hours input" ng-model="number2" type="text" />
+                    <div>+</div>
+                    <label>Teamwork Logged Time</label>
+                    <input class="deputy-hours input" ng-model="number1" type="text" />
+                    <input type="submit" placeholder="Submit" />
+                </form>
+                <div class="efficiency">Efficiency = {{calculation*100}} %</div>
             </div><!--//contact-inner-->
         </div><!--//container-->
     </section><!--//contact-->  
+    </div>

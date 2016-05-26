@@ -1,21 +1,32 @@
-header#header .container .inner-container {
-	.logo {
-	    padding: 0;
-	    display: table;
-	    a {
-		    display: table-cell;
-		    vertical-align: middle;
-		}
-	}
-	nav#main-nav ul.nav {
-	    margin: 0;
-	    > li {
-			display: inline-block;
-			list-style: none;
-			margin: 0;
-			button {
-			    margin: 0;
+header#header {
+	position: static;
+	.container .inner-container {
+		.logo {
+			padding: 0;
+			display: table;
+			a {
+				display: table-cell;
+				vertical-align: middle;
 			}
 		}
+		nav#main-nav ul.nav {
+			margin: 0;
+			> li {
+				display: inline-block;
+				list-style: none;
+				margin: 0;
+				button {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+.calculator-form input {
+	color: #000;
+	&[type="submit"] {
+	  display: block;
+	  margin: 0 auto;
 	}
 }
