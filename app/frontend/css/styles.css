@@ -115,12 +115,20 @@
 
 /* Default */
 /* ======= Base ======= */
+html, html body, html body * {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html a, html body a, html body * a {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Lato', arial, sans-serif;
   color: #444444;
   font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,

@@ -72,39 +72,3 @@ app.listen(app.get('port'), function (){
 	console.log('Server in '+app.get('env')+' environment running at port:'+app.get('port'));
 });
 
-// var request = require('request');
-// request('http://ipinfo.io/json', function (error, response, body) {
-//     //Check for error
-//     if(error){
-//         return console.log('Error:', error);
-//     }
-
-//     //Check for right status code
-//     if(response.statusCode !== 200){
-//         return console.log('Invalid Status Code Returned:', response.statusCode);
-//     }
-
-//     //All is good. Print the body
-//     console.log(body); // Show the HTML for the Modulus homepage.
-// });
-
-// //Load the request module
-// var request = require('request');
-
-// //Lets configure and request
-// request({
-//     url: 'http://modulus.io', //URL to hit
-//     qs: {from: 'blog example', time: +new Date()}, //Query string data
-//     method: 'GET', //Specify the method
-//     headers: { //We can define headers too
-//         'Content-Type': 'MyContentType',
-//         'Custom-Header': 'Custom Value'
-//     }
-// }, function(error, response, body){
-//     if(error) {
-//         console.log(error);
-//     } else {
-//         console.log(response.statusCode, body);
-//     }
-// });
-

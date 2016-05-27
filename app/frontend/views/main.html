@@ -3,43 +3,51 @@
 <!-- ******ABOUT****** --> 
 <div id="homePage" ng-controller="calculator">
   <section id="about" class="about section">
-    <div class="container">
-      <div class="row">
-        <div class="columns three center">
-          <div class="image-wrap">
-            <img src="../img/emp-placeholder.jpg" alt="First Employee" />
-          </div>
-          <div class="employee-info">
-            <div class="emp-name">John Dopamine</div>
-            <div class="emp-job-title">Dope Distributor</div>
-          </div>
+    <div class="container" ng-controller="teamworkGet">
+      <div class="row" ng-repeat="person in employees track by $index" ng-if="$index%4==0">
+        <div class="columns three center" ng-if="employees[$index].id">
+          <a href="#">
+            <div class="image-wrap">
+              <img src="{{employees[$index]['avatar-url']}}" alt="First Employee" />
+            </div>
+            <div class="employee-info">
+              <div class="emp-name">{{employees[$index]["first-name"]}} {{employees[$index]["last-name"]}}</div>
+              <div class="emp-job-title">{{employees[$index].title}}</div>
+            </div>
+          </a>
         </div>
-        <div class="columns three center">
-          <div class="image-wrap" ng-click="calc()">
-            <img src="../img/emp-placeholder.jpg" alt="Second Employee" />
-          </div>
-          <div class="employee-info">
-            <div class="emp-name">Jake Dopamine</div>
-            <div class="emp-job-title">Dope Distributor</div>
-          </div>
+        <div class="columns three center" ng-if="employees[$index+1].id">
+          <a href="#">
+            <div class="image-wrap">
+              <img src="{{employees[$index+1]['avatar-url']}}" alt="First Employee" />
+            </div>
+            <div class="employee-info">
+              <div class="emp-name">{{employees[$index+1]["first-name"]}} {{employees[$index+1]["last-name"]}}</div>
+              <div class="emp-job-title">{{employees[$index+1].title}}</div>
+            </div>
+          </a>
         </div>
-        <div class="columns three center">
-          <div class="image-wrap">
-            <img src="../img/emp-placeholder.jpg" alt="Third Employee" />
-          </div>
-          <div class="employee-info">
-            <div class="emp-name">Dalton Dopamine</div>
-            <div class="emp-job-title">Dope Distributor</div>
-          </div>
+        <div class="columns three center" ng-if="employees[$index+2].id">
+          <a href="#">
+            <div class="image-wrap">
+              <img src="{{employees[$index+2]['avatar-url']}}" alt="First Employee" />
+            </div>
+            <div class="employee-info">
+              <div class="emp-name">{{employees[$index+2]["first-name"]}} {{employees[$index+2]["last-name"]}}</div>
+              <div class="emp-job-title">{{employees[$index+2].title}}</div>
+            </div>
+          </a>
         </div>
-        <div class="columns three center">
-          <div class="image-wrap">
-            <img src="../img/emp-placeholder.jpg" alt="Fourth Employee" />
-          </div>
-          <div class="employee-info">
-            <div class="emp-name">Sarah Tonin</div>
-            <div class="emp-job-title">Tonin Distributor</div>
-          </div>
+        <div class="columns three center" ng-if="employees[$index+3].id">
+          <a href="#">
+            <div class="image-wrap">
+              <img src="{{employees[$index+3]['avatar-url']}}" alt="First Employee" />
+            </div>
+            <div class="employee-info">
+              <div class="emp-name">{{employees[$index+3]["first-name"]}} {{employees[$index+3]["last-name"]}}</div>
+              <div class="emp-job-title">{{employees[$index+3].title}}</div>
+            </div>
+          </a>
         </div>
       </div>
     </div><!--//container-->
@@ -92,8 +100,10 @@
               <h3>Info From Teamwork API</h3>
               <ul>
                 <li>$http status code: {{status}}</li>
-                <li>$http data: {{data}}</li>
-                <li>people: {{data.people}}</li>
+                <li>First Person Company Name: {{data.people[0]["company-name"]}}</li>
+                <li>First Person Email Address: {{data.people[0]["email-address"]}}</li>
+                <li>First Person ID: {{data.people[0].id}}</li>
+                <li ng-repeat="people in data.people">{{people["company-name"]}}</li>
               </ul>
             </div>
           </div>
