@@ -3,7 +3,7 @@
 <!-- ******ABOUT****** --> 
 <div id="homePage" ng-controller="calculator">
   <section id="about" class="about section">
-    <div class="container" ng-controller="teamworkGet">
+    <div class="container" ng-controller="teamworkGetPeople">
       <div class="row" ng-repeat="person in employees track by $index" ng-if="$index%4==0">
         <div class="columns three center" ng-if="employees[$index].id">
           <a href="#">
@@ -78,14 +78,12 @@
       <div class="request-inner">
         <div class="title-section center">
           <h2>Practice API Call</h2>
-          <p>Pulling test data from test API</p>
         </div>
-        <div class="content-section">
+        <div class="content-section" ng-controller="teamworkGetTime">
           <div class="row">
             <div class="column one-half" ng-controller="practiceGet">
               <h3>Info From Practice API</h3>
               <ul>
-                <li>$http status code: {{status}}</li>
                 <li>IP: {{data.ip}}</li>
                 <li>Hostname: {{data.hostname}}</li>
                 <li>City: {{data.city}}</li>
@@ -96,14 +94,12 @@
                 <li>Zip Code: {{data.postal}}</li>
               </ul>
             </div>
-            <div class="column one-half" ng-controller="teamworkGet">
+            <div class="column one-half" ng-controller="teamworkGetPeople">
               <h3>Info From Teamwork API</h3>
               <ul>
-                <li>$http status code: {{status}}</li>
-                <li>First Person Company Name: {{data.people[0]["company-name"]}}</li>
-                <li>First Person Email Address: {{data.people[0]["email-address"]}}</li>
-                <li>First Person ID: {{data.people[0].id}}</li>
-                <li ng-repeat="people in data.people">{{people["company-name"]}}</li>
+                <li>First Company Name: {{data.people[0]["company-name"]}}</li>
+                <li>Josh Time Logs On Woodbridge For May 27, 2016: {{joshEntries}} Minutes</li>
+<!--                 <li ng-repeat="people in data.people">{{people["company-name"]}}</li> -->
               </ul>
             </div>
           </div>
